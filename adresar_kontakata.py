@@ -38,7 +38,7 @@ class Application(Frame):
     def create_widgets(self, index=-1):
         if index >= 0:
             data = self.readItemData(index)
-            print(data[1])
+            #print(data[1])
             self.g_name = data[1]
             self.g_lastname = data[2]
             self.g_address = data[3]
