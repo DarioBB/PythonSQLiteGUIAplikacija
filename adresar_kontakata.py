@@ -3,6 +3,7 @@ __author__ = 'Dario Benšić'
 from tkinter import *
 
 import sqlite3
+import os
 
 class Application(Frame):
     """GUI aplikacija"""
@@ -27,7 +28,7 @@ class Application(Frame):
         self.grid(row=0, column=0, padx=10, pady=10)
         self.create_widgets()
 
-        self.conn = sqlite3.connect('address_book.db')
+        self.conn = sqlite3.connect(os.getenv("APPDATA")+'//address_book.db')
         self.conn.row_factory = sqlite3.Row
         self.c = self.conn.cursor()
 
